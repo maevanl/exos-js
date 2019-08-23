@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="fr">
+  <head><title>Calculette</title>
+    <script type="text/javascript">
+     function cal(val) {
+         document.getElementById("calc-output").innerHTML += val;
+     }
+     function calClean(){
+        document.getElementById("calc-output").innerHTML = "";
+     }
+     function calPlus() {
+        document.getElementById("calc-output").innerHTML += "+";
+     }
+     function calLess() {
+        document.getElementById("calc-output").innerHTML += "-";
+     }
+     function calMultiply() {
+        document.getElementById("calc-output").innerHTML += "*";
+     }
+     function calDivision() {
+        document.getElementById("calc-output").innerHTML += "/";
+     }
+
+     function calEgal() {
+	      var egal = eval(document.getElementById('calc-output').innerHTML);
+	      document.getElementById('calc-output').innerHTML = egal;
+      }
+
+</script>
+    <style> #case{
+      height: 37px;
+      width: 170px;
+      border: 1px solid gray;
+  }
+
+  .number{
+      height: 30px;
+      width: 40px;
+      color: black;
+  }
+   .oper{
+        height: 30px;
+      width: 40px;
+      color: black;
+      }
+    </style>
+  </head>
+  <body>
+  <table>
+        <tr>
+          <td colspan="4" align="right" id="case">
+            <span id="calc-output"></span>
+          </td>
+        </tr>
+     </table>
+     <table>
+       <tr>
+         <td>
+           <input class="number" type="button" value="1" id="button-1" onclick="cal(1)"/>
+         </td>
+         <td>
+           <input class="number" type="button" value="2" id="button-2" onclick="cal(2)"/>
+         </td>
+         <td>
+           <input class="number" type="button" value="3" id="button-3" onclick="cal(3)"/>
+         </td>
+         <td>
+           <input class="oper" type="button" value="C" id="button-C" onclick="calClean()"/>
+         </td>
+       </tr>
+
+       <tr>
+         <td>
+           <input class="number" type="button" value="4" id="button-4" onclick="cal(4)"/>
+         </td>
+         <td>
+           <input class="number" type="button" value="5" id="button-5" onclick="cal(5)"/>
+         </td>
+         <td>
+           <input class="number" type="button" value="6" id="button-6" onclick="cal(6)"/>
+         </td>
+         <td>
+           <input class="oper" type="button" value="+" id="button-+" onclick="calPlus()"/>
+         </td>
+       </tr>
+
+       <tr>
+         <td>
+           <input class="number" type="button" value="7" id="button-7" onclick="cal(7)"/>
+         </td>
+         <td>
+           <input class="number" type="button" value="8" id="button-8" onclick="cal(8)"/>
+         </td>
+         <td>
+           <input class="number" type="button" value="9" id="button-9" onclick="cal(9)"/>
+         </td>
+         <td>
+           <input class="oper" type="button" value="-" id="button--" onclick="calLess()"/>
+         </td>
+       </tr>
+
+       <tr>
+         <td>
+           <input class="oper" type="button" value="*" id="button-*" onclick="calMultiply()"/>
+         </td>
+         <td>
+           <input class="number"type="button" value="0" id="button-0" onclick="cal(0)"/>
+         </td>
+         <td>
+           <input class="oper" type="button" value="/" id="button-/" onclick="calDivision()"/>
+         </td>
+         <td>
+           <input class="oper" type="button" value="=" id="button-=" onclick="calEgal()"/>
+         </td>
+       </tr>
+
+     </table>
+  </body>
+</html>
